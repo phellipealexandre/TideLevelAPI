@@ -1,6 +1,6 @@
 # API para tábua de maré
 ## Intro
-Hoje em dia existe uma dificuldade muito grande em integrar serviços de tábua de maré em nossas aplicações. Os serviços disponíveis possuem documentação ruim e muitas vezes não funcionam bem. Por isso criei esse scrapper que transforma o HTML da tábua de maré disponibilizada pelo cptec em uma resposta JSON.
+Hoje em dia existe uma dificuldade muito grande em integrar serviços de tábua de maré em nossas aplicações. Os serviços disponíveis possuem documentação ruim e muitas vezes não funcionam bem. Por isso criei esse scrapper que transforma o HTML da tábua de maré disponibilizada pelo [cptec](http://ondas.cptec.inpe.br/) em uma resposta JSON.
 
 ## Contrato
 Para fazer a chamada teremos que passar três parâmetros:
@@ -68,6 +68,55 @@ Exemplos de código de região:
 60139::Terminal Portuário da Ponta do Félix::PR
 30337::Terminal Portuário de Pecem::CE
 10572::Trapiche de Breves::PA
+```
+
+Exemplo de resposta:
+```
+[
+  {
+  "date": "01/01/19",
+  "levelList": [
+    {
+      "hour": "01:00",
+      "level": "2.0"
+    },
+    {
+      "hour": "07:00",
+      "level": "0.6"
+    },
+    {
+      "hour": "13:30",
+      "level": "2.0"
+    },
+    {
+      "hour": "19:30",
+      "level": "0.6"
+    }
+  ]
+  },
+  {
+  "date": "02/01/19",
+  "levelList": [
+    {
+      "hour": "01:58",
+      "level": "2.0"
+    },
+    {
+      "hour": "07:53",
+      "level": "0.5"
+    },
+    {
+      "hour": "14:19",
+      "level": "2.1"
+    },
+    {
+      "hour": "20:19",
+      "level": "0.5"
+    }
+  ]
+  },
+  ...
+]
 ```
 
 ## Pontos de melhoria no projeto
