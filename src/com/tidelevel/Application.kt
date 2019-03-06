@@ -1,9 +1,7 @@
 package com.tidelevel
 
 import com.fasterxml.jackson.databind.SerializationFeature
-import com.tidelevel.di.ApplicationComponent
 import com.tidelevel.di.Dagger
-import com.tidelevel.di.DaggerApplicationComponent
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install

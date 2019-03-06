@@ -1,8 +1,8 @@
-build-project:
+build-and-test:
 	./gradlew build
 
-clean-project:
+clean:
 	./gradlew clean
 
-execute-tests:
+tests:
 	./gradlew test
