@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_BR" lang="pt_BR">
+<title>Mares</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$(".dropdown img.flag").addClass("flagvisibility");
+
+			$(".dropdown dt a").click(function() {
+				$(".dropdown dd ul").toggle();
+			});
+
+			$(".dropdown dd ul li a").click(function() {
+				var text = $(this).html();
+				$(".dropdown dt a span").html(text);
+				$(".dropdown dd ul").hide();
+				$("#result").html("Selected value is: " + getSelectedValue("sample"));
+			});
+
+			function getSelectedValue(id) {
+				return $("#" + id).find("dt a span.value").html();
+			}
+
+			$(document).bind('click', function(e) {
+				var $clicked = $(e.target);
+				if (! $clicked.parents().hasClass("dropdown"))
+					$(".dropdown dd ul").hide();
+			});
+
+
+			$("#flagSwitcher").click(function() {
+				$(".dropdown img.flag").toggleClass("flagvisibility");
+			});
+		});
+	</script>
+
+
+
+
+    <link rel="stylesheet" href="tabua.css" />
+
+
+</head>
+
+<body>
+
+<div class="titulo">
+
+    <div class="nome">Porto de Natal-RN
+    </div>
+    <div class="data"><strong>m&ecirc;s:</strong>
+        <li class='desativado'>&nbsp;</li> 01 <li class="ativo"><a href = "index.php?cod=30461&mes=02&ano=19">>></a></li> &nbsp;  &nbsp;  &nbsp;<strong>ano:</strong> <li class="ativo"><a href = "index.php?cod=30461&mes=01&ano=18"><<</a></li> 2019 <li class='desativado'>&nbsp;</li>
+    </div>
+</div>
+<div class="imprimir">
+    Imprimir <a href="javascript:print('/~rondas/mares/index.php?cod=30461&mes=01&ano=19');"><img src="http://www.cptec.inpe.br/cidades/img/printer.gif" border="0" align="absmiddle"></a>
+</div>
+<div class="select"> <dl id="sample" class="dropdown">
+    <dt><a href="#"><span> Selecione outro local:</span></a></dt>
+    <dd>
+        <ul>
+            <li><a href='index.php?cod=60135&mes=01&ano=19'>Barra do Porto de Paranagu&aacute; Canal da Galheta-PR
+            </a></li>
+            <li><a href='index.php?cod=60130&mes=01&ano=19'>Barra do Porto de Paranagu&aacute; Canal Sueste-PR
+            </a></li>
+            <li><a href='index.php?cod=10653&mes=01&ano=19'>Barra Norte do Rio Amazonas-Ponta do C&eacute;u-AP
+            </a></li>
+            <li><a href='index.php?cod=30825&mes=01&ano=19'>Capitania dos Portos de Sergipe-SE
+            </a></li>
+            <li><a href='index.php?cod=20520&mes=01&ano=19'>Fundeadouro de Salin&oacute;polis-PA
+            </a></li>
+            <li><a href='index.php?cod=40263&mes=01&ano=19'>Ilha da Trindade-Brasil
+            </a></li>
+            <li><a href='index.php?cod=30955&mes=01&ano=19'>Ilha de Fernando de Noronha-Pernambuco
+            </a></li>
+            <li><a href='index.php?cod=10525&mes=01&ano=19'>Ilha do Mosqueiro-PA
+            </a></li>
+            <li><a href='index.php?cod=20535&mes=01&ano=19'>Ilha dos Guar&aacute;s-PA
+            </a></li>
+            <li><a href='index.php?cod=50170&mes=01&ano=19'>Porto de Angra dos Reis-RJ
+            </a></li>
+            <li><a href='index.php?cod=40135&mes=01&ano=19'>Porto de Aratu-BA
+            </a></li>
+            <li><a href='index.php?cod=30407&mes=01&ano=19'>Porto de Areia Branca-Termisa-RN
+            </a></li>
+            <li><a href='index.php?cod=10520&mes=01&ano=19'>Porto de Bel&eacute;m-PA
+            </a></li>
+            <li><a href='index.php?cod=30540&mes=01&ano=19'>Porto de Cabedelo-PB
+            </a></li>
+            <li><a href='index.php?cod=60245&mes=01&ano=19'>Porto de Florian&oacute;polis-SC
+            </a></li>
+            <li><a href='index.php?cod=30443&mes=01&ano=19'>Proto de Guamar&eacute;-RN
+            </a></li>
+            <li><a href='index.php?cod=40145&mes=01&ano=19'>Porto de Ilh&eacute;us-BA
+            </a></li>
+            <li><a href='index.php?cod=60250&mes=01&ano=19'>Porto de Imbituba-SC
+            </a></li>
+            <li><a href='index.php?cod=50145&mes=01&ano=19'>Porto de Itagua&iacute;-RJ
+            </a></li>
+            <li><a href='index.php?cod=60235&mes=01&ano=19'>Porto de Itaja&iacute;-SC
+            </a></li>
+            <li><a href='index.php?cod=30110&mes=01&ano=19'>Porto de Itaqui-MA
+            </a></li>
+            <li><a href='index.php?cod=30225&mes=01&ano=19'>Porto de Lu&iacute;s Correia-PI
+            </a></li>
+            <li><a href='index.php?cod=30445&mes=01&ano=19'>Porto de Macau-RN
+            </a></li>
+            <li><a href='index.php?cod=30725&mes=01&ano=19'>Porto de Macei&oacute;-AL
+            </a></li>
+            <li><a href='index.php?cod=40118&mes=01&ano=19'>Porto de Madre de Deus-BA
+            </a></li>
+            <li><a href='index.php?cod=30340&mes=01&ano=19'>Porto de Mucuripe-CE
+            </a></li>
+            <li id='selected'><a href='index.php?cod=30461&mes=01&ano=19'>Porto de Natal-RN
+            </a></li>
+            <li><a href='index.php?cod=60132&mes=01&ano=19'>Porto de Paranagu&aacute;-PR
+            </a></li>
+            <li><a href='index.php?cod=30645&mes=01&ano=19'>Porto de Recife-PE
+            </a></li>
+            <li><a href='index.php?cod=40140&mes=01&ano=19'>Porto de Salvador-BA
+            </a></li>
+            <li><a href='index.php?cod=10615&mes=01&ano=19'>Porto de Santana-Icomi-AM
+            </a></li>
+            <li><a href='index.php?cod=50225&mes=01&ano=19'>Porto de Santos-SP
+            </a></li>
+            <li><a href='index.php?cod=60220&mes=01&ano=19'>Porto de S&atilde;o Francisco do Sul-SC
+            </a></li>
+            <li><a href='index.php?cod=50210&mes=01&ano=19'>Porto de S&atilde;o Sebasti&atilde;o-SP
+            </a></li>
+            <li><a href='index.php?cod=30685&mes=01&ano=19'>Porto de Suape-PE
+            </a></li>
+            <li><a href='index.php?cod=30140&mes=01&ano=19'>Porto de Tut&oacute;ia-MA
+            </a></li>
+            <li><a href='index.php?cod=10566&mes=01&ano=19'>Porto de Vila do Conde-PA
+            </a></li>
+            <li><a href='index.php?cod=40252&mes=01&ano=19'>Porto de Vit&oacute;ria-ES
+            </a></li>
+            <li><a href='index.php?cod=50156&mes=01&ano=19'>Porto do Forno-RJ
+            </a></li>
+            <li><a href='index.php?cod=50140&mes=01&ano=19'>Porto do Rio de Janeiro-RJ
+            </a></li>
+            <li><a href='index.php?cod=60370&mes=01&ano=19'>Porto do Rio Grande-RS
+            </a></li>
+            <li><a href='index.php?cod=40255&mes=01&ano=19'>Porto do Tubar&atilde;o-ES
+            </a></li>
+            <li><a href='index.php?cod=30120&mes=01&ano=19'>S&atilde;o Lu&iacute;s-MA
+            </a></li>
+            <li><a href='index.php?cod=30114&mes=01&ano=19'>Terminal da Alumar-MA
+            </a></li>
+            <li><a href='index.php?cod=50165&mes=01&ano=19'>Terminal da Ilha Gua&iacute;ba-RJ
+            </a></li>
+            <li><a href='index.php?cod=30149&mes=01&ano=19'>Terminal da Ponta da Madeira-MA
+            </a></li>
+            <li><a href='index.php?cod=40280&mes=01&ano=19'>Terminal da Ponta do Ubu-ES
+            </a></li>
+            <li><a href='index.php?cod=40240&mes=01&ano=19'>Terminal de Barra do Riacho-ES
+            </a></li>
+            <li><a href='index.php?cod=50116&mes=01&ano=19'>Terminal Mar&iacute;timo de Imbetiba-RJ
+            </a></li>
+            <li><a href='index.php?cod=30810&mes=01&ano=19'>Terminal Mar&iacute;tmo In&aacute;cio Barbosa-SE
+            </a></li>
+            <li><a href='index.php?cod=60139&mes=01&ano=19'>Terminal Portu&aacute;rio da Ponta do F&eacute;lix-PR
+            </a></li>
+            <li><a href='index.php?cod=30337&mes=01&ano=19'>Terminal Portu&aacute;rio de Pecem-CE
+            </a></li>
+            <li><a href='index.php?cod=10572&mes=01&ano=19'>Trapiche de Breves-PA</a></li>
+
+        </ul>
+    </dd>
+</dl>
+    <span id="result"></span>
+
+
+
+
+
+
+</div>
+<div class="hr"></div>
+<div class="subtitulo"><strong> Fases da Lua</strong></div>
+
+<div class="luas">
+
+    <li><img src=http://ondas.cptec.inpe.br/~rondas/common/img/lua_nova.gif />05/01 -   22:28<br />nova</li><li><img src=http://ondas.cptec.inpe.br/~rondas/common/img/lua_crescente.gif />14/01 -   03:45<br />crescente</li><li><img src=http://ondas.cptec.inpe.br/~rondas/common/img/lua_cheia.gif />21/01 -   02:16<br />cheia</li><li><img src=http://ondas.cptec.inpe.br/~rondas/common/img/lua_minguante.gif />27/01 -   18:10<br />minguante</li>
+
+
+
+</div><div class="legen">Fonte: <a href="http://www.das.inpe.br/" target="_blank">DAS</a></div>
+<div class='hr'></div>
+
+<div class="subtitulo"><strong> T&aacute;bua das Mar&eacute;s de 01/2019</strong></div>
+
+<div class='tabua'>
+    <li class="tit">Domingo</li>
+    <li class="tit">Segunda-feira</li>
+    <li class="tit">Ter&ccedil;a-feira</li>
+    <li class="tit">Quarta-feira</li>
+    <li class="tit">Quinta-feira</li>
+    <li class="tit">Sexta-feira</li>
+    <li class="tit">S&aacute;bado</li>
+
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+    <li class="alt">Altura(m)</li>
+
+
+
+    <li class="dados">&nbsp;</li><li class="dados">&nbsp;</li><li class="dados"><strong>01/1/</strong><br/>01:00 &nbsp; 2.0<br/>07:00 &nbsp; 0.6<br/>13:30 &nbsp; 2.0<br/>19:30 &nbsp; 0.6<br/></li>
+    <li class="dados"><strong>02/1/</strong><br/>01:58 &nbsp; 2.0<br/>07:53 &nbsp; 0.5<br/>14:19 &nbsp; 2.1<br/>20:19 &nbsp; 0.5<br/></li>
+    <li class="dados"><strong>03/1/</strong><br/>02:51 &nbsp; 2.1<br/>08:36 &nbsp; 0.5<br/>15:04 &nbsp; 2.2<br/>21:02 &nbsp; 0.4<br/></li>
+    <li class="dados"><strong>04/1/</strong><br/>03:34 &nbsp; 2.1<br/>09:15 &nbsp; 0.4<br/>15:45 &nbsp; 2.3<br/>21:43 &nbsp; 0.3<br/></li>
+    <li class="dados"><strong>05/1/</strong><br/>04:11 &nbsp; 2.1<br/>09:54 &nbsp; 0.4<br/>16:21 &nbsp; 2.3<br/>22:19 &nbsp; 0.3<br/></li>
+    <div class='divisao'></div><li class="dados"><strong>06/1/</strong><br/>04:49 &nbsp; 2.1<br/>10:28 &nbsp; 0.4<br/>16:56 &nbsp; 2.3<br/>22:56 &nbsp; 0.3<br/></li>
+    <li class="dados"><strong>07/1/</strong><br/>05:23 &nbsp; 2.1<br/>11:04 &nbsp; 0.4<br/>17:28 &nbsp; 2.3<br/>23:30 &nbsp; 0.3<br/></li>
+    <li class="dados"><strong>08/1/</strong><br/>05:56 &nbsp; 2.1<br/>11:38 &nbsp; 0.5<br/>18:00 &nbsp; 2.2<br/></li>
+    <li class="dados"><strong>09/1/</strong><br/>00:04 &nbsp; 0.4<br/>06:28 &nbsp; 2.0<br/>12:11 &nbsp; 0.5<br/>18:34 &nbsp; 2.2<br/></li>
+    <li class="dados"><strong>10/1/</strong><br/>00:39 &nbsp; 0.4<br/>07:02 &nbsp; 2.0<br/>12:47 &nbsp; 0.6<br/>19:09 &nbsp; 2.1<br/></li>
+    <li class="dados"><strong>11/1/</strong><br/>01:13 &nbsp; 0.5<br/>07:41 &nbsp; 1.9<br/>13:24 &nbsp; 0.7<br/>19:51 &nbsp; 2.0<br/></li>
+    <li class="dados"><strong>12/1/</strong><br/>01:54 &nbsp; 0.6<br/>08:23 &nbsp; 1.8<br/>14:08 &nbsp; 0.8<br/>20:36 &nbsp; 1.9<br/></li>
+    <div class='divisao'></div><li class="dados"><strong>13/1/</strong><br/>02:39 &nbsp; 0.7<br/>09:13 &nbsp; 1.8<br/>15:02 &nbsp; 0.8<br/>21:30 &nbsp; 1.8<br/></li>
+    <li class="dados"><strong>14/1/</strong><br/>03:38 &nbsp; 0.7<br/>10:13 &nbsp; 1.8<br/>16:11 &nbsp; 0.9<br/>22:36 &nbsp; 1.8<br/></li>
+    <li class="dados"><strong>15/1/</strong><br/>04:47 &nbsp; 0.8<br/>11:23 &nbsp; 1.8<br/>17:30 &nbsp; 0.8<br/>23:49 &nbsp; 1.8<br/></li>
+    <li class="dados"><strong>16/1/</strong><br/>05:58 &nbsp; 0.7<br/>12:32 &nbsp; 1.9<br/>18:39 &nbsp; 0.7<br/></li>
+    <li class="dados"><strong>17/1/</strong><br/>01:00 &nbsp; 1.9<br/>07:00 &nbsp; 0.6<br/>13:36 &nbsp; 2.0<br/>19:38 &nbsp; 0.5<br/></li>
+    <li class="dados"><strong>18/1/</strong><br/>02:02 &nbsp; 2.0<br/>07:56 &nbsp; 0.5<br/>14:30 &nbsp; 2.2<br/>20:30 &nbsp; 0.3<br/></li>
+    <li class="dados"><strong>19/1/</strong><br/>03:00 &nbsp; 2.2<br/>08:47 &nbsp; 0.3<br/>15:21 &nbsp; 2.4<br/>21:19 &nbsp; 0.1<br/></li>
+    <div class='divisao'></div><li class="dados"><strong>20/1/</strong><br/>03:53 &nbsp; 2.3<br/>09:36 &nbsp; 0.2<br/>16:09 &nbsp; 2.5<br/>22:08 &nbsp; 0.0<br/></li>
+    <li class="dados"><strong>21/1/</strong><br/>04:41 &nbsp; 2.4<br/>10:21 &nbsp; 0.1<br/>16:58 &nbsp; 2.6<br/>22:56 &nbsp; -0.1<br/></li>
+    <li class="dados"><strong>22/1/</strong><br/>05:28 &nbsp; 2.4<br/>11:08 &nbsp; 0.1<br/>17:45 &nbsp; 2.6<br/>23:43 &nbsp; -0.1<br/></li>
+    <li class="dados"><strong>23/1/</strong><br/>06:15 &nbsp; 2.4<br/>11:56 &nbsp; 0.1<br/>18:32 &nbsp; 2.5<br/></li>
+    <li class="dados"><strong>24/1/</strong><br/>00:30 &nbsp; 0.0<br/>07:02 &nbsp; 2.3<br/>12:45 &nbsp; 0.2<br/>19:19 &nbsp; 2.4<br/></li>
+    <li class="dados"><strong>25/1/</strong><br/>01:19 &nbsp; 0.1<br/>07:53 &nbsp; 2.2<br/>13:34 &nbsp; 0.4<br/>20:09 &nbsp; 2.3<br/></li>
+    <li class="dados"><strong>26/1/</strong><br/>02:09 &nbsp; 0.3<br/>08:43 &nbsp; 2.1<br/>14:26 &nbsp; 0.5<br/>21:04 &nbsp; 2.1<br/></li>
+    <div class='divisao'></div><li class="dados"><strong>27/1/</strong><br/>03:06 &nbsp; 0.5<br/>09:39 &nbsp; 2.0<br/>15:28 &nbsp; 0.6<br/>22:06 &nbsp; 2.0<br/></li>
+    <li class="dados"><strong>28/1/</strong><br/>04:11 &nbsp; 0.6<br/>10:43 &nbsp; 1.9<br/>16:43 &nbsp; 0.7<br/>23:17 &nbsp; 1.9<br/></li>
+    <li class="dados"><strong>29/1/</strong><br/>05:24 &nbsp; 0.7<br/>11:53 &nbsp; 1.8<br/>18:04 &nbsp; 0.8<br/></li>
+    <li class="dados"><strong>30/1/</strong><br/>00:32 &nbsp; 1.8<br/>06:38 &nbsp; 0.7<br/>13:00 &nbsp; 1.9<br/>19:13 &nbsp; 0.7<br/></li>
+    <li class="dados"><strong>31/1/</strong><br/>01:38 &nbsp; 1.9<br/>07:36 &nbsp; 0.7<br/>13:58 &nbsp; 2.0<br/>20:08 &nbsp; 0.6<br/></li>
+
+
+</div>
+<div class="legen">Fonte: <a href="http://www.dhn.mar.mil.br/" target="_blank">DHN</a></div>
+</body>
+</html>
