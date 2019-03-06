@@ -2,13 +2,16 @@ package com.tidelevel.repository
 
 import com.tidelevel.models.TideDay
 import com.tidelevel.models.TideLevel
+import dagger.Reusable
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
+import javax.inject.Inject
 
 private const val TABLE_DATA_QUERY = "li[class$=dados]:has(strong)"
 private const val DATE_ELEMENT_QUERY = "strong"
 
-class CPTECHtmlParser {
+@Reusable
+class CPTECHtmlParser @Inject constructor() {
 
     fun parseHTMLPageToTideDays(doc: Document, actualMonth: String, actualYear: String): List<TideDay> {
         return doc.select(TABLE_DATA_QUERY).map {

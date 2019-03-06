@@ -1,9 +1,9 @@
 package com.tidelevel
 
 import com.fasterxml.jackson.databind.SerializationFeature
-import com.tidelevel.repository.CPTECHtmlParser
-import com.tidelevel.repository.CPTECRepository
-import com.tidelevel.service.TideLevelService
+import com.tidelevel.di.ApplicationComponent
+import com.tidelevel.di.Dagger
+import com.tidelevel.di.DaggerApplicationComponent
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
@@ -15,7 +15,6 @@ import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
-import java.lang.Exception
 
 fun main(args: Array<String>) {
     val server = embeddedServer(Tomcat, port = 8080) {
@@ -38,9 +37,7 @@ fun Application.mainModule() {
             val month: String? = call.request.queryParameters["month"]
             val year: String? = call.request.queryParameters["year"]
 
-            val cptecHtmlParser = CPTECHtmlParser()
-            val cptecRepository = CPTECRepository()
-            val tideLevelService = TideLevelService(cptecHtmlParser, cptecRepository)
+            val tideLevelService = Dagger.component.providesTideLevelService()
 
             try {
                 val tideDays = tideLevelService.fetchTideDays(regionCode, month, year)
