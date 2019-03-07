@@ -2,10 +2,12 @@ package com.tidelevel
 
 import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.equalTo
+import org.junit.Ignore
 import org.junit.Test
 
 class ApplicationProductionSmokeTest {
 
+    @Ignore("Figure out a way to deploy the server before test or use ktor-server-tests")
     @Test
     fun shouldFetchTideLevelsCorrectlyWithHttpStatus200WhenParametersAreCorrect() {
         given()
@@ -20,6 +22,7 @@ class ApplicationProductionSmokeTest {
             .body("date.size", equalTo(31))
     }
 
+    @Ignore("Figure out a way to deploy the server before test or use ktor-server-tests")
     @Test
     fun shouldReturnHttpStatus400WhenParametersAreMissing() {
         given()
