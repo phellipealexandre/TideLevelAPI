@@ -1,4 +1,7 @@
 # API para tábua de maré
+
+[![CircleCI](https://circleci.com/gh/phellipealexandre/TideLevelAPI.svg?style=svg)](https://circleci.com/gh/phellipealexandre/TideLevelAPI)
+
 ## Intro
 Hoje em dia existe uma dificuldade muito grande em integrar serviços de tábua de maré em nossas aplicações. Os serviços disponíveis possuem documentação ruim e muitas vezes não funcionam bem. Por isso criei esse scrapper que transforma o HTML da tábua de maré disponibilizada pelo [cptec](http://ondas.cptec.inpe.br/) em uma resposta JSON.
 
