@@ -120,6 +120,4 @@ Exemplo de resposta:
 ```
 
 ## Pontos de melhoria no projeto
-* Melhoria nos testes com aplicação de ferramenta de injeção de dependência
-* Criação de uma pipeline de integração contínua
 * Deploy da API em um endpoint público
