@@ -1,0 +1,6 @@
+{
+  "name": "Tide Level API",
+  "description": "https://github.com/phellipealexandre/TideLevelAPI",
+  "image": "heroku/java",
+  "addons": [ ]
+}
