@@ -15,7 +15,8 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.tomcat.Tomcat
 
 fun main(args: Array<String>) {
-    val server = embeddedServer(Tomcat, port = 8080) {
+    val port = System.getenv("PORT")?.toInt() ?: 8080
+    val server = embeddedServer(Tomcat, port) {
         mainModule()
     }
 
