@@ -30,6 +30,10 @@ fun Application.mainModule() {
     }
 
     routing {
+        get("") {
+            call.respond("Health check OK!")
+        }
+
         get("/tidelevel") {
             val regionCode: String? = call.request.queryParameters["regionCode"]
             val month: String? = call.request.queryParameters["month"]

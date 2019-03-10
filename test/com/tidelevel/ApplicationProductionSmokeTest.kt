@@ -35,4 +35,13 @@ class ApplicationProductionSmokeTest {
             }
         }
     }
+
+    @Test
+    fun shouldReturnHealthCheckOKWhenCallingServiceInTheRootPath() {
+        withTestApplication(Application::mainModule) {
+            with(handleRequest(HttpMethod.Get, "")) {
+                assertEquals("Health check OK!", response.content)
+            }
+        }
+    }
 }
