@@ -43,7 +43,7 @@ fun Application.mainModule() {
             } catch (e: IllegalArgumentException) {
                 call.respond(HttpStatusCode.BadRequest, e.message.orEmpty())
             } catch (e: Exception) {
-                call.respond(HttpStatusCode.InternalServerError, e.message.orEmpty())
+                call.respond(HttpStatusCode.InternalServerError, "Error TideLevelAPI: ${e.message.orEmpty()}")
             }
         }
     }
