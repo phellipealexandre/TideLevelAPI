@@ -20,13 +20,23 @@ class CPTECHtmlParserTest {
     }
 
     @Test
+    fun shouldParseDocumentToRegionNameWithoutError() {
+        val mockedHtml = IOUtils.toString(javaClass.getResourceAsStream("/responses/response_jan_19.html"), "UTF-8");
+        val document = Jsoup.parseBodyFragment(mockedHtml)
+
+        val tideResponse = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
+
+        assertEquals("Porto de Natal-RN", tideResponse.region)
+    }
+
+    @Test
     fun shouldParseDocumentToTideDaysWithoutError() {
         val mockedHtml = IOUtils.toString(javaClass.getResourceAsStream("/responses/response_jan_19.html"), "UTF-8");
         val document = Jsoup.parseBodyFragment(mockedHtml)
 
-        val tideDays = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
+        val tideResponse = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
 
-        assertEquals(31, tideDays.size)
+        assertEquals(31, tideResponse.tideDays.size)
     }
 
     @Test
@@ -34,7 +44,8 @@ class CPTECHtmlParserTest {
         val mockedHtml = IOUtils.toString(javaClass.getResourceAsStream("/responses/response_jan_19.html"), "UTF-8");
         val document = Jsoup.parseBodyFragment(mockedHtml)
 
-        val tideDays: List<TideDay> = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
+        val tideResponse = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
+        val tideDays = tideResponse.tideDays
 
         assertEquals("01/01/19", tideDays[0].date)
         assertEquals("02/01/19", tideDays[1].date)
@@ -74,9 +85,9 @@ class CPTECHtmlParserTest {
         val mockedHtml = IOUtils.toString(javaClass.getResourceAsStream("/responses/response_jan_19.html"), "UTF-8");
         val document = Jsoup.parseBodyFragment(mockedHtml)
 
-        val tideDays: List<TideDay> = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
+        val tideResponse = cptecHtmlParser.parseHTMLPageToTideDays(document, "01", "19")
 
-        assertThat(tideDays.first().levelList, contains(
+        assertThat(tideResponse.tideDays.first().levelList, contains(
             TideLevel("01:00", "2.0"),
             TideLevel("07:00", "0.6"),
             TideLevel("13:30", "2.0"),

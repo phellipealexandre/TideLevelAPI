@@ -18,11 +18,12 @@ class ApplicationProductionSmokeTest {
             with(handleRequest(HttpMethod.Get, "/tidelevel?regionCode=30461&month=01&year=19")) {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertNotNull(response.content)
-                assertEquals(31, JsonPath.parse(response.content).read<List<Any>>("$").size)
-                assertEquals("01/01/19", JsonPath.parse(response.content).read<String>("$[0].date"))
-                assertEquals(4, JsonPath.parse(response.content).read<List<Any>>("$[0].levelList").size)
-                assertEquals("01:00", JsonPath.parse(response.content).read<String>("$[0].levelList[0].hour"))
-                assertEquals("2.0", JsonPath.parse(response.content).read<String>("$[0].levelList[0].level"))
+                assertEquals(31, JsonPath.parse(response.content).read<List<Any>>("$.tideDays").size)
+                assertEquals("Porto de Natal-RN", JsonPath.parse(response.content).read<String>("$.region"))
+                assertEquals("01/01/19", JsonPath.parse(response.content).read<String>("$.tideDays[0].date"))
+                assertEquals(4, JsonPath.parse(response.content).read<List<Any>>("$.tideDays[0].levelList").size)
+                assertEquals("01:00", JsonPath.parse(response.content).read<String>("$.tideDays[0].levelList[0].hour"))
+                assertEquals("2.0", JsonPath.parse(response.content).read<String>("$.tideDays[0].levelList[0].level"))
             }
         }
     }

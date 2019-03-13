@@ -43,8 +43,8 @@ fun Application.mainModule() {
             val tideLevelService = Dagger.component.providesTideLevelService()
 
             try {
-                val tideDays = tideLevelService.fetchTideDays(regionCode, month, year)
-                call.respond(HttpStatusCode.OK, tideDays)
+                val tideResponse = tideLevelService.fetchTideDays(regionCode, month, year)
+                call.respond(HttpStatusCode.OK, tideResponse)
             } catch (e: IllegalArgumentException) {
                 call.respond(HttpStatusCode.BadRequest, e.message.orEmpty())
             } catch (e: Exception) {
