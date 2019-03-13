@@ -75,52 +75,55 @@ Exemplos de código de região:
 
 Exemplo de resposta:
 ```
-[
-  {
-    "date": "01/01/19",
-    "levelList": [
-      {
-        "hour": "01:00",
-        "level": "2.0"
-      },
-      {
-        "hour": "07:00",
-        "level": "0.6"
-      },
-      {
-        "hour": "13:30",
-        "level": "2.0"
-      },
-      {
-        "hour": "19:30",
-        "level": "0.6"
-      }
-    ]
-  },
-  {
-    "date": "02/01/19",
-    "levelList": [
-      {
-        "hour": "01:58",
-        "level": "2.0"
-      },
-      {
-        "hour": "07:53",
-        "level": "0.5"
-      },
-      {
-        "hour": "14:19",
-        "level": "2.1"
-      },
-      {
-        "hour": "20:19",
-        "level": "0.5"
-      }
-    ]
-  },
+{
+	"region": "Porto de Natal-RN",
+	"tideDays": [
+		{
+			"date": "01/01/19",
+			"levelList": [
+				{
+					"hour": "01:00",
+					"level": "2.0"
+				},
+				{
+					"hour": "07:00",
+					"level": "0.6"
+				},
+				{
+					"hour": "13:30",
+					"level": "2.0"
+				},
+				{
+					"hour": "19:30",
+					"level": "0.6"
+				}
+			]
+		},
+		{
+			"date": "02/01/19",
+			"levelList": [
+				{
+					"hour": "01:58",
+					"level": "2.0"
+				},
+				{
+					"hour": "07:53",
+					"level": "0.5"
+				},
+				{
+					"hour": "14:19",
+					"level": "2.1"
+				},
+				{
+					"hour": "20:19",
+					"level": "0.5"
+				}
+			]
+		},
   ...
-]
+	]
+}
 ```
 
-## Pontos de melhoria no projeto
-* Deploy da API em um endpoint público
+## API URL
+* https://tidelevelapi.phellipe.dev/tidelevel?regionCode=30461&month=01&year=19
